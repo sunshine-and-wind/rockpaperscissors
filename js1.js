@@ -4,6 +4,7 @@ let computerWins = 0;
 let playerWins = 0;
 let tieCount = 0;
 let totalRounds = 0;
+let winner;
 
 function game() {
 
@@ -15,7 +16,7 @@ function playRound(computerSelection, playerSelection) {
     if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
         alert("You must type 'Rock', 'Paper', or 'Scissors' to play");
         getUserChoice();
-        } else { alert("You chose " + playerSelection)
+        } else { console.log("You chose " + playerSelection + '.');
     }; return playerSelection;
 }
 
@@ -38,10 +39,10 @@ getComputerChoice();
         console.log('Paper beats rock. Player 1 wins.');
         return 'PLAYER';
     } else if ((computerSelection == 'rock') && (playerSelection == 'scissors')) {
-        console.log('Rock beats scissors. Computer wins.')
+        console.log('Rock beats scissors. Computer wins.');
         return 'COMPUTER';
     } else if ((computerSelection == 'paper') && (playerSelection == 'rock')) {
-        console.log('Paper beats rock. Computer wins.'); 
+        console.log('Paper beats rock. Computer wins'); 
         return 'COMPUTER';
     } else if ((computerSelection == 'paper') && (playerSelection == 'scissors')) {
          console.log('Scissors beats paper. Player 1 wins.');
@@ -62,19 +63,21 @@ if (x == 'TIE') { tieCount += 1 }
 else if (x == 'PLAYER') { playerWins += 1 }
 else if (x == 'COMPUTER') {computerWins += 1 }
 
-console.log('Player 1 Wins: ', playerWins);
-console.log('Computer Wins: ', computerWins);
-console.log('Ties: ', tieCount);
+console.log('Player One:', playerWins, 'Computer:', computerWins, 'Ties:', tieCount);
 totalRounds += 1;
 console.log('Total Rounds Played: ', totalRounds);
 if ((playerWins === 3) || (computerWins === 3)) { break; }
 }
 
+document.getElementById("result").innerHTML = 'good game';
 if (playerWins > computerWins) { 
+    winner = 'PLAYER ONE';
     console.log('Player 1 beats computer: ', playerWins, 'to ', computerWins);
 } else if (playerWins < computerWins) {
+    winner = 'PLAYER ONE';
     console.log('Computer beats Player 1: ', computerWins, 'to ', playerWins);
 } else if (playerWins == computerWins) { 
     console.log('Tie game, no winner. Play again.')
 };
+console.log(winner, ' wins. Final score: ')
 };
