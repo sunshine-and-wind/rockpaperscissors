@@ -5,14 +5,17 @@ let playerWins = 0;
 let tieCount = 0;
 let totalRounds = 0;
 
+function game() {
+
 function playRound(computerSelection, playerSelection) {
     function getUserChoice() {
     let userChoice = prompt('Please choose: Rock, Paper, or Scissors: ');
     playerSelection = userChoice.toLowerCase();
     
     if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+        alert("You must type 'Rock', 'Paper', or 'Scissors' to play");
         getUserChoice();
-        } else { document.getElementById("PC").innerHTML = ("You chose " + playerSelection)
+        } else { alert("You chose " + playerSelection)
     }; return playerSelection;
 }
 
@@ -22,7 +25,7 @@ function getComputerChoice(){
     const choices = ["rock", "paper", "scissors"];
     const random = Math.floor(Math.random() * choices.length);
     computerSelection = choices[random];
-    document.getElementById("CC").innerHTML = (`The computer has chosen ${computerSelection}.`);
+    console.log(`The computer has chosen ${computerSelection}.`);
     return computerSelection;
 }
 
@@ -54,13 +57,12 @@ getComputerChoice();
 };
 
 for (i = 0; i <5; i++) {
-document.getElementById("round").innerHTML = ('Round ' +  (i + 1));
 let x = playRound(computerSelection, playerSelection);
 if (x == 'TIE') { tieCount += 1 }
 else if (x == 'PLAYER') { playerWins += 1 }
 else if (x == 'COMPUTER') {computerWins += 1 }
 
-console.log('Player Wins: ', playerWins);
+console.log('Player 1 Wins: ', playerWins);
 console.log('Computer Wins: ', computerWins);
 console.log('Ties: ', tieCount);
 totalRounds += 1;
@@ -69,9 +71,10 @@ if ((playerWins === 3) || (computerWins === 3)) { break; }
 }
 
 if (playerWins > computerWins) { 
-    console.log('Player beats computer: ', playerWins, 'to ', computerWins);
+    console.log('Player 1 beats computer: ', playerWins, 'to ', computerWins);
 } else if (playerWins < computerWins) {
     console.log('Computer beats Player 1: ', computerWins, 'to ', playerWins);
 } else if (playerWins == computerWins) { 
     console.log('Tie game, no winner. Play again.')
+};
 };
