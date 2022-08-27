@@ -1,3 +1,7 @@
+
+
+function game() {
+
 let computerSelection;
 let playerSelection;
 let computerWins = 0;
@@ -6,12 +10,11 @@ let tieCount = 0;
 let totalRounds = 0;
 let winner;
 
-function game() {
-
 function playRound(computerSelection, playerSelection) {
     function getUserChoice() {
     let userChoice = prompt('Please choose: Rock, Paper, or Scissors: ');
-    playerSelection = userChoice.toLowerCase();
+    let strip = userChoice.trim()
+    playerSelection = strip.toLowerCase();
     
     if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
         alert("You must type 'Rock', 'Paper', or 'Scissors' to play");
@@ -59,25 +62,24 @@ getComputerChoice();
 
 for (i = 0; i <5; i++) {
 let x = playRound(computerSelection, playerSelection);
-if (x == 'TIE') { tieCount += 1 }
+if (x == 'TIE') { i = (i-1); tieCount += 1 }
 else if (x == 'PLAYER') { playerWins += 1 }
 else if (x == 'COMPUTER') {computerWins += 1 }
 
 console.log('Player One:', playerWins, 'Computer:', computerWins, 'Ties:', tieCount);
 totalRounds += 1;
-console.log('Total Rounds Played: ', totalRounds);
+document.getElementById("total").innerHTML = 'Total Rounds Played: ' + totalRounds;
 if ((playerWins === 3) || (computerWins === 3)) { break; }
 }
 
-document.getElementById("result").innerHTML = 'good game';
+
 if (playerWins > computerWins) { 
     winner = 'PLAYER ONE';
-    console.log('Player 1 beats computer: ', playerWins, 'to ', computerWins);
+    document.getElementById("result").innerHTML = ('Player One beats computer: ' + playerWins + ' to ' + computerWins);
 } else if (playerWins < computerWins) {
-    winner = 'PLAYER ONE';
-    console.log('Computer beats Player 1: ', computerWins, 'to ', playerWins);
+    winner = 'COMPUTER';
+    document.getElementById("result").innerHTML = ('Computer beats Player One: '+ computerWins + ' to ' + playerWins);
 } else if (playerWins == computerWins) { 
     console.log('Tie game, no winner. Play again.')
 };
-console.log(winner, ' wins. Final score: ')
 };
