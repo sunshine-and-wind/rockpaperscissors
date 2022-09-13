@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></style>
     <title>Document</title>
 </head>
 <body>
     <h1>EXTREME ROCK PAPER AND SCISSORS</h1>
     <p>PRESS F12 to play in console. Best of five. Ties don't count. Click button when ready.</p>
     <button onclick="game()">CLICK TO PLAY</button>
+    <div class="container" id="main">
+        <div class="option"><img src="images/rock.png" alt="clip art drawning of a brown rock" onclick="rock()"></div>
+        <div class="option"><img src="images/paper.png" alt="clip art drawing of a sheet of blank paper"></div>
+        <div class="option"><img src="images/scissors.png" alt="a clip art drawing of a pair of scissors with black handles"></div>
+    </div>
     <p id="round"></p>
     <p id="total"></p> 
     <p id="result">result</p>
