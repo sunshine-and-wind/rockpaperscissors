@@ -7,20 +7,29 @@
     <link rel="stylesheet" href="style.css"></style>
     <title>Document</title>
 </head>
+
 <body>
     <h1>EXTREME ROCK PAPER AND SCISSORS</h1>
-    <p>PRESS F12 to play in console. Best of five. Ties don't count. Click button when ready.</p>
-    <button onclick="game()">CLICK TO PLAY</button>
-    <div class="container" id="main">
-        <div class="option"><img src="images/rock.png" alt="clip art drawning of a brown rock" onclick="rock()"></div>
-        <div class="option"><img src="images/paper.png" alt="clip art drawing of a sheet of blank paper"></div>
-        <div class="option"><img src="images/scissors.png" alt="a clip art drawing of a pair of scissors with black handles"></div>
+    <p>First player to win five rounds wins the game. Ties don't count. Click button when ready.</p>
+    <!-- <button onclick="displayGame()">CLICK TO PLAY</button> -->
+
+    <div id="container">
+        <div class="button" id="rock"><img src="images/rock.png" alt="rock"></div>
+        <div class="button" id="paper"><img src="images/paper.png" alt="paper"></div>
+        <div class="button" id="scissors"><img src="images/scissors.png" alt="scissors"></div>
     </div>
+
+    </body>
+    <h2>THIS ROUND</h2>
+    <p id="select"></p> 
     <p id="round"></p>
-    <p id="total"></p> 
-    <p id="result">result</p>
-    <script src="js1.js">       
+    <h2>SCORE</h2>
+    <p id="score"></p>
+    <h2>RESULT</h2>
+    <p id="result"></p> 
+    <h1 id="reset"></h1>
+
+    <script src="js2.js">       
     </script>
-    
 </body>
 </html>

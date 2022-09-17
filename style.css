@@ -1,6 +1,6 @@
 /* CSS FILE */
 
-.container {
+#container {
     display: flex;
     border: 2px solid black;
     justify-content: space-evenly;
