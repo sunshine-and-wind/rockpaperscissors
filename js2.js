@@ -9,8 +9,10 @@ let round = document.getElementById('round').textContent;
 let score = document.getElementById('score').textContent;
 let result = document.getElementById('result').textContent;
 let reset = document.getElementById('reset').innerHTML;
+let game = document.getElementById('game').textContent;
+let img = document.querySelectorAll('img');
+let divbox = document.querySelector('.divbox');
 
-let newGame = document.getElementById('container');
 let buttons = document.querySelectorAll('.button');
 
 buttons.forEach((button) => {
@@ -73,12 +75,15 @@ function displayResult() {
         document.getElementById("result").textContent = ('Computer beats Player One: ' + computerWins + ' to ' + playerWins);
     }; 
 
+    document.getElementById('game').textContent = "GAME OVER!!"
     document.getElementById("reset").innerHTML = "<button onclick='resetGame()'>PLAY AGAIN??</button>"
     computerWins = 0;
     playerWins = 0;
     tieCount = 0;
     totalRounds = 0;
+    divbox.style.display = "none";
 }
+
 
 function resetGame() {
 document.getElementById('select').textContent='';
@@ -86,4 +91,5 @@ document.getElementById('round').textContent='';
 document.getElementById('score').textContent='';
 document.getElementById('result').textContent='';
 document.getElementById('reset').innerHTML='';
+divbox.style.display = "block";
 };
