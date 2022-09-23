@@ -1,9 +1,35 @@
 /* CSS FILE */
 
+body {
+    background-color: rgb(96, 91, 172);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border : 2px solid black;
+    font-family :Arial, Helvetica, sans-serif;
+    color: rgb(208, 255, 100);
+}
+
+#game {
+    font-size: 200px;
+}
+
+#result {
+    font-size: 100px;
+}
+
+#round {
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    font-size: larger;
+}
+
 #container {
     display: flex;
     border: 2px solid black;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
     margin: 20px;
 }
@@ -12,7 +38,9 @@
     transform: scale(1.5);
 }
 
-
+img {
+    height: 250px;
+}
 .button :hover {
     border: 2px solid black;
 }

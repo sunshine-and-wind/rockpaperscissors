@@ -40,32 +40,26 @@ function playRound(computerSelection, playerSelection) {
     if (computerSelection == playerSelection) {
         document.getElementById('round').textContent = 'You both chose ' + playerSelection + '. The result is a tie.';
         tieCount += 1;
-        document.getElementById('score').textContent = 'Player one: ' + playerWins + ', Computer: ' + computerWins + ', Ties: ' + tieCount;
     } else if ((computerSelection == 'rock') && (playerSelection == 'paper')) {
         document.getElementById('round').textContent = 'Paper beats rock. Player 1 wins.';
         playerWins += 1;
-        document.getElementById('score').textContent = 'Player one: ' + playerWins + ', Computer: ' + computerWins + ', Ties: ' + tieCount;
     } else if ((computerSelection == 'rock') && (playerSelection == 'scissors')) {
         document.getElementById('round').textContent = 'Rock beats scissors. Computer wins.';
         computerWins += 1;
-        document.getElementById('score').textContent = 'Player one: ' + playerWins + ', Computer: ' + computerWins + ', Ties: ' + tieCount;
     } else if ((computerSelection == 'paper') && (playerSelection == 'rock')) {
-        document.getElementById('round').textContent = 'Paper beats rock. Computer wins';
+        document.getElementById('round').textContent = 'Paper beats rock. Computer wins.';
         computerWins += 1;
-        document.getElementById('score').textContent = 'Player one: ' + playerWins + ', Computer: ' + computerWins + ', Ties: ' + tieCount;
     } else if ((computerSelection == 'paper') && (playerSelection == 'scissors')) {
         document.getElementById('round').textContent = 'Scissors beats paper. Player 1 wins.';
         playerWins += 1;
-        document.getElementById('score').textContent = 'Player one: ' + playerWins + ', Computer: ' + computerWins + ', Ties: ' + tieCount;
     } else if ((computerSelection == 'scissors') && (playerSelection == 'rock')) {
         document.getElementById('round').textContent = 'Rock beats scissors. Player 1 wins.';
         playerWins += 1;
-        document.getElementById('score').textContent = 'Player one: ' + playerWins + ', Computer: ' + computerWins + ', Ties: ' + tieCount;
     } else if ((computerSelection == 'scissors') && (playerSelection == 'paper')) {
         document.getElementById('round').textContent = 'Scissors beats paper. Computer wins.';
         computerWins += 1;
-        document.getElementById('score').textContent = 'Player one: ' + playerWins + ', Computer: ' + computerWins + ', Ties: ' + tieCount;
     };
+    document.getElementById('score').textContent = 'Player one: ' + playerWins + ' || Computer: ' + computerWins + ' || Ties: ' + tieCount;
 };
 
 function displayResult() {
@@ -88,8 +82,9 @@ function displayResult() {
 function resetGame() {
 document.getElementById('select').textContent='';
 document.getElementById('round').textContent='';
-document.getElementById('score').textContent='';
 document.getElementById('result').textContent='';
+document.getElementById('score').textContent='Player one: 0 || Computer: 0 || Ties: 0';
 document.getElementById('reset').innerHTML='';
+document.getElementById('game').innerHTML='';
 divbox.style.display = "block";
 };
