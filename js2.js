@@ -5,13 +5,19 @@ let playerWins = 0;
 let tieCount = 0;
 let totalRounds = 0;
 
+let roundNumber = document.getElementById('roundNumber').textContent;
 let round = document.getElementById('round').textContent;
-let score = document.getElementById('score').textContent;
 let result = document.getElementById('result').textContent;
 let reset = document.getElementById('reset').innerHTML;
 let game = document.getElementById('game').textContent;
 let img = document.querySelectorAll('img');
+
+let pw = document.getElementById('pw').textContent;
+let cw = document.getElementById('cw').textContent;
+let tc = document.getElementById('tc').textContent;
+
 let divbox = document.querySelector('.divbox');
+let header = document.querySelector('.header');
 
 let buttons = document.querySelectorAll('.button');
 
@@ -20,7 +26,9 @@ buttons.forEach((button) => {
         const playerSelection = button.id;
         console.log(playerSelection);
         getComputerChoice()
-        document.getElementById('select').textContent = `You chose ${playerSelection}. The computer has chosen ${computerSelection}.`;
+        totalRounds += 1;
+        document.getElementById('roundNumber').textContent = `ROUND ${totalRounds}`;
+        document.getElementById('select').textContent = `You chose ${playerSelection}. The computer chose ${computerSelection}.`;
         playRound(computerSelection, playerSelection);
         if ((computerWins == 5) || (playerWins == 5)) {
             displayResult();
@@ -38,7 +46,7 @@ function getComputerChoice(){
 function playRound(computerSelection, playerSelection) {
 
     if (computerSelection == playerSelection) {
-        document.getElementById('round').textContent = 'You both chose ' + playerSelection + '. The result is a tie.';
+        document.getElementById('round').textContent = 'The result is a tie.';
         tieCount += 1;
     } else if ((computerSelection == 'rock') && (playerSelection == 'paper')) {
         document.getElementById('round').textContent = 'Paper beats rock. Player 1 wins.';
@@ -59,23 +67,27 @@ function playRound(computerSelection, playerSelection) {
         document.getElementById('round').textContent = 'Scissors beats paper. Computer wins.';
         computerWins += 1;
     };
-    document.getElementById('score').textContent = 'Player one: ' + playerWins + ' || Computer: ' + computerWins + ' || Ties: ' + tieCount;
+    document.getElementById('pw').textContent = 'Player one: ' + playerWins;
+    document.getElementById('cw').textContent = 'Computer: ' + computerWins;
+    document.getElementById('tc').textContent = 'Ties: ' + tieCount;
 };
 
 function displayResult() {
     if (playerWins > computerWins) { 
+        document.getElementById('game').textContent = "YOU WIN!"
         document.getElementById("result").textContent = ('Player One beats computer: ' + playerWins + ' to ' + computerWins);
     } else if (playerWins < computerWins) {
+        document.getElementById('game').textContent = "YOU LOSE!"
         document.getElementById("result").textContent = ('Computer beats Player One: ' + computerWins + ' to ' + playerWins);
     }; 
 
-    document.getElementById('game').textContent = "GAME OVER!!"
-    document.getElementById("reset").innerHTML = "<button onclick='resetGame()'>PLAY AGAIN??</button>"
+    document.getElementById("reset").innerHTML = "<button onclick='resetGame()'>Play Again?</button>"
     computerWins = 0;
     playerWins = 0;
     tieCount = 0;
-    totalRounds = 0;
+    totalRounds = 0
     divbox.style.display = "none";
+    header.style.display = "none";
 }
 
 
@@ -83,8 +95,13 @@ function resetGame() {
 document.getElementById('select').textContent='';
 document.getElementById('round').textContent='';
 document.getElementById('result').textContent='';
-document.getElementById('score').textContent='Player one: 0 || Computer: 0 || Ties: 0';
+document.getElementById('pw').textContent = 'Player one: ' + playerWins;
+document.getElementById('cw').textContent = 'Computer: ' + computerWins;
+document.getElementById('tc').textContent = 'Ties: ' + tieCount;
 document.getElementById('reset').innerHTML='';
 document.getElementById('game').innerHTML='';
+document.getElementById('roundNumber').textContent = '';
 divbox.style.display = "block";
+header.style.display = "block";
+
 };

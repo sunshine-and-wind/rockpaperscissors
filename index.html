@@ -9,24 +9,44 @@
 </head>
 
 <body>
-    <h1>EXTREME ROCK PAPER AND SCISSORS</h1>
-    <h2>First player to win five rounds wins the game. Ties don't count.</h2>
-    <div id="game"></div>
-    <div id="result"></div>
-    <!-- <button onclick="displayGame()">CLICK TO PLAY</button> -->
-
-    <div id="select"></div><br>
-    <div id="round"></div><br>
-    <div id="score">Player one: 0 || Computer: 0 || Ties: 0</div>
-    <div class="divbox">
-        <div id="container">
-            <div class="button" id="rock"><img src="images/rock.png" alt="rock"></div>
-            <div class="button" id="paper"><img src="images/paper.png" alt="paper"></div>
-            <div class="button" id="scissors"><img src="images/scissors.png" alt="scissors"></div>
+    <div class="gameboard">
+        <div class="header">
+            <div>***EXTREME***</div>
+            <div>ROCK PAPER SCISSORS</div>
+            <div class="sub">
+                <div>First player to win five rounds wins the game.</div>
+                <div>Ties don't count.</div>
+            </div>
         </div>
-    </div>
 
-    <h1 id="reset"></h1>
+        <div class="gameover">
+            <div id="game"></div>
+            <div id="result"></div>
+            <div id="reset"></div>
+        </div>
+
+
+        <div id="score">
+            <div id="pw">Player one: </div>
+            <div id="cw">Computer: </div> 
+            <div id="tc">Ties: </div>
+        </div>
+
+        <div class="divbox">
+            <div id="container">
+                <div class="button" id="rock"><img src="images/rock.png" alt="rock"></div>
+                <div class="button" id="paper"><img src="images/paper.png" alt="paper"></div>
+                <div class="button" id="scissors"><img src="images/scissors.png" alt="scissors"></div>
+            </div>
+        </div>
+
+        <div class="scoreboard">
+            <div id="roundNumber"></div>
+            <div id="select"></div>
+            <div id="round"></div>
+        </div>
+
+    </div>
 
     <script src="js2.js">       
     </script>
