@@ -75,7 +75,7 @@ function playRound(computerSelection, playerSelection) {
 function displayResult() {
     if (playerWins > computerWins) { 
         document.getElementById('game').textContent = "YOU WIN!"
-        document.getElementById("result").textContent = ('Player One beats computer: ' + playerWins + ' to ' + computerWins);
+        document.getElementById("result").textContent = ('Player One beats Computer: ' + playerWins + ' to ' + computerWins);
     } else if (playerWins < computerWins) {
         document.getElementById('game').textContent = "YOU LOSE!"
         document.getElementById("result").textContent = ('Computer beats Player One: ' + computerWins + ' to ' + playerWins);
