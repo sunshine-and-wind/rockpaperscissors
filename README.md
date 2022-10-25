@@ -1,2 +1,2 @@
 # rockpaperscissors
-Basic Rock Paper Scissors game
+Basic Rock Paper Scissors game - Desktop version
